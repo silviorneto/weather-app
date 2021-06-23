@@ -1,8 +1,7 @@
 import React from "react";
 import { dateRender } from "../../utils";
 
-import { Skeleton } from "@material-ui/lab";
-import { Container, Title, Clima, StyleDiv, SkeletonDiv } from "./styles";
+import { Container, Title, Clima, StyleDiv } from "./styles";
 
 export default function TodayWeatherCard({ weather }) {
   return (

@@ -2,7 +2,6 @@ import React from "react";
 import { dateRender } from "../../utils";
 import { RiArrowRightSFill } from "react-icons/ri";
 
-import { Skeleton } from "@material-ui/lab";
 import {
   Container,
   Card,
@@ -10,7 +9,6 @@ import {
   Clima,
   StyleDiv,
   BulletPoint,
-  SkeletonDiv,
 } from "./styles";
 
 export default function WeekWeatherCard({ weatherList }) {
