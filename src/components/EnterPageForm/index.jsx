@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     width: "75%",
     maxWidth: "400px",
     height: "35vh",
+    minHeight: "285px",
     margin: " 2vh auto",
     textAlign: "center",
   },
