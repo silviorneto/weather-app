@@ -31,6 +31,3 @@ export const LogoContainer = styled.div`
     }
   }
 `;
-
-/* @media (max-width: 375px) {
-} */

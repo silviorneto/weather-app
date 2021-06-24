@@ -75,7 +75,6 @@ export default function WeatherPage() {
       .then((resp) => {
         setApiError(false);
         buildDateList(resp.data.list);
-        console.log("response", resp.data);
       })
       .catch((e) => {
         console.log(e);
@@ -106,8 +105,6 @@ export default function WeatherPage() {
   useEffect(() => {
     requestAPI(city, apiKey);
   }, [city]);
-
-  console.log(weatherPerDay, weatherToday);
 
   return (
     <div>
