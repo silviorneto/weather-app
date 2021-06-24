@@ -9,8 +9,6 @@ export default function FavoriteBar() {
   const favorites = useSelector((state) => state.favorites);
   const city = useSelector((state) => state.city);
 
-  const favorite = ["São Paulo", "Curitiba"];
-
   const goToPage = (elem) => {
     if (elem !== city) {
       dispatch(searchCity(elem));

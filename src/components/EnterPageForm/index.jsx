@@ -1,14 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getAPIKey } from "../../store/modules/getAPIKey/actions";
 import { getAPIKeyThunk } from "../../store/modules/getAPIKey/thunks";
 import { useHistory } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, TextField, Button } from "@material-ui/core";
 import { Error } from "./styles";
-import { useEffect } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {

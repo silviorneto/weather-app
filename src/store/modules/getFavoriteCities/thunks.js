@@ -1,5 +1,4 @@
 import { addFavorite, removeFavorite } from "./actions";
-import { toastFavoriteLimitError } from "../../../utils/toastify";
 import { capitalize } from "../../../utils";
 
 export const addFavoriteThunk = (city) => (dispatch, getStore) => {

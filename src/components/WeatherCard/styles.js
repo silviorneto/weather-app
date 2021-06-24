@@ -16,7 +16,6 @@ const background = {
   Névoa: [mistImg, "black"],
   Fumaça: [mistImg, "black"],
   Pó: [mistImg, "black"],
-  Névoa: [mistImg, "black"],
   Areia: [mistImg, "black"],
   Cinzas: [mistImg, "black"],
   Limpo: [sunnyImg, "black"],

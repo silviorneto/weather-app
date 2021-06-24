@@ -5,13 +5,9 @@ import { searchCity } from "../../store/modules/getCity/actions";
 
 import AppLogo from "../AppLogo";
 
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import InputBase from "@material-ui/core/InputBase";
+import { AppBar, Toolbar, IconButton, InputBase } from "@material-ui/core/";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import { AiOutlineSearch } from "react-icons/ai";
-import { MdFavorite } from "react-icons/md";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,9 +17,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
   },
-  menuButton: {
-    // marginRight: theme.spacing(2),
-  },
+  menuButton: {},
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -31,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    // marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
@@ -53,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -116,15 +108,6 @@ export default function AppMenu() {
                   />
                 </div>
               </form>
-
-              {/* <IconButton
-                edge="end"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="menu"
-              >
-                <MdFavorite />
-              </IconButton> */}
             </>
           )}
         </Toolbar>
