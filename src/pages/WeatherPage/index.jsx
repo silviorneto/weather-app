@@ -20,9 +20,15 @@ import {
   toastRemoveSuccess,
 } from "../../utils/toastify";
 
-import { TitleDiv, Title, H3, Warning, SkeletonDiv } from "./styles";
+import {
+  TitleDiv,
+  Title,
+  H3,
+  Warning,
+  SkeletonDiv,
+  ButtonStyled,
+} from "./styles";
 import { Skeleton } from "@material-ui/lab";
-import { Button } from "@material-ui/core/";
 
 export default function WeatherPage() {
   const dispatch = useDispatch();
@@ -116,17 +122,21 @@ export default function WeatherPage() {
             <Title>{capitalize(city)}</Title>
 
             {favorites.includes(city) ? (
-              <Button
+              <ButtonStyled
                 color="secondary"
                 variant="contained"
                 onClick={removeFavorite}
               >
                 Remover da lista
-              </Button>
+              </ButtonStyled>
             ) : (
-              <Button color="primary" variant="contained" onClick={addFavorite}>
+              <ButtonStyled
+                color="primary"
+                variant="contained"
+                onClick={addFavorite}
+              >
                 Adicionar à minha lista
-              </Button>
+              </ButtonStyled>
             )}
           </TitleDiv>
 

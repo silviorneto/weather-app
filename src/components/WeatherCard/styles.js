@@ -38,6 +38,10 @@ export const Container = styled.div`
   color: ${(props) => background[props.bg][1]};
   text-shadow: 2px 2px 3px rgba(150, 150, 150, 1);
   font-size: 1.3rem;
+
+  @media (min-width: 376px) {
+    height: 27vh;
+  }
 `;
 export const Title = styled.h2`
   text-align: left;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "@material-ui/core/";
 
 export const TitleDiv = styled.div`
   display: flex;
@@ -8,6 +9,7 @@ export const TitleDiv = styled.div`
   align-items: center;
   margin: 2vh auto;
   max-width: 310px;
+  min-height: 70px;
 
   h3 {
     margin-right: 3vw;
@@ -21,9 +23,13 @@ export const TitleDiv = styled.div`
 
 export const Title = styled.h2``;
 
+export const ButtonStyled = styled(Button)`
+  height: 25px;
+`;
+
 export const H3 = styled.h3`
   text-align: center;
-  margin-bottom: 3px;
+  margin: 30px 0 3px 0;
 `;
 
 export const Warning = styled.h2`
