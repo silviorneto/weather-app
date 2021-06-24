@@ -5,7 +5,7 @@ import { Container, Title, Clima, StyleDiv } from "./styles";
 
 export default function TodayWeatherCard({ weather }) {
   return (
-    <Container bg={weather.description}>
+    <Container>
       {weather && (
         <>
           <Title>{dateRender(weather.date)}</Title>
