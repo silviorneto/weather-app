@@ -23,19 +23,8 @@ import {
 import { TitleDiv, Title, H3, Warning, SkeletonDiv } from "./styles";
 import { Skeleton } from "@material-ui/lab";
 import { Button } from "@material-ui/core/";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-}));
 
 export default function WeatherPage() {
-  const classes = useStyles();
-
   const dispatch = useDispatch();
 
   const city = useSelector((state) => state.city);
@@ -86,7 +75,7 @@ export default function WeatherPage() {
       .then((resp) => {
         setApiError(false);
         buildDateList(resp.data.list);
-        console.log("api request ok");
+        console.log("response", resp.data);
       })
       .catch((e) => {
         console.log(e);
@@ -118,7 +107,7 @@ export default function WeatherPage() {
     requestAPI(city, apiKey);
   }, [city]);
 
-  console.log(favorites, city);
+  console.log(weatherPerDay, weatherToday);
 
   return (
     <div>

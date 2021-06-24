@@ -1,6 +1,5 @@
 import Routes from "./routes";
 import AppMenu from "./components/Menu";
-import FavoriteBar from "./components/FavoriteBar";
 
 function App() {
   return (
