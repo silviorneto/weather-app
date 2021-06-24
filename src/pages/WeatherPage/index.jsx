@@ -1,20 +1,46 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import api from "../../services";
+import { useDispatch, useSelector } from "react-redux";
+import { format, addDays } from "date-fns";
+import api from "../../services/api";
 
 import WeatherCard from "../../components/WeatherCard";
 import WeekWeatherCard from "../../components/WeekWeatherCard";
+import FavoriteBar from "../../components/FavoriteBar";
+
+import {
+  addFavoriteThunk,
+  removeFavoriteThunk,
+} from "../../store/modules/getFavoriteCities/thunks";
+
+import { datesForWeek, weatherModel, capitalize } from "../../utils";
+import {
+  toastAlreadyAFavorite,
+  toastFavoriteLimitError,
+  toastFavoriteSuccess,
+  toastRemoveSuccess,
+} from "../../utils/toastify";
 
 import { TitleDiv, Title, H3, Warning, SkeletonDiv } from "./styles";
 import { Skeleton } from "@material-ui/lab";
-import { datesForWeek, weatherModel, capitalize } from "../../utils";
-import { format, addDays } from "date-fns";
+import { Button } from "@material-ui/core/";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+}));
 
 export default function WeatherPage() {
+  const classes = useStyles();
+
+  const dispatch = useDispatch();
+
   const city = useSelector((state) => state.city);
   const apiKey = useSelector((state) => state.apiKey);
-  const history = useHistory();
+  const favorites = useSelector((state) => state.favorites);
 
   const today = new Date();
   const [weatherToday, setWeatherToday] = useState([]);
@@ -54,31 +80,72 @@ export default function WeatherPage() {
     setWeatherPerDay(output);
   };
 
-  useEffect(() => {
+  const requestAPI = (city, key) => {
     api
-      .get(`/forecast?q=${city}&appid=${apiKey}`)
+      .get(`/forecast?q=${city}&appid=${key}`)
       .then((resp) => {
         setApiError(false);
         buildDateList(resp.data.list);
+        console.log("api request ok");
       })
       .catch((e) => {
         console.log(e);
         setApiError(true);
       });
+  };
+
+  const addFavorite = () => {
+    if (favorites.length >= 5) {
+      console.log("condição 1", favorites);
+      toastFavoriteLimitError();
+      return;
+    }
+    if (favorites.includes(city)) {
+      toastAlreadyAFavorite();
+      return;
+    }
+
+    toastFavoriteSuccess();
+    dispatch(addFavoriteThunk(city));
+  };
+
+  const removeFavorite = () => {
+    dispatch(removeFavoriteThunk(city));
+    toastRemoveSuccess();
+  };
+
+  useEffect(() => {
+    requestAPI(city, apiKey);
   }, [city]);
 
-  console.log("weatherToday", weatherToday);
+  console.log(favorites, city);
 
   return (
     <div>
       {city && !apiError ? (
         <>
+          <FavoriteBar />
+
           <TitleDiv>
             <Title>{capitalize(city)}</Title>
-            <small>Adicionar à minha lista</small>
+
+            {favorites.includes(city) ? (
+              <Button
+                color="secondary"
+                variant="contained"
+                onClick={removeFavorite}
+              >
+                Remover da lista
+              </Button>
+            ) : (
+              <Button color="primary" variant="contained" onClick={addFavorite}>
+                Adicionar à minha lista
+              </Button>
+            )}
           </TitleDiv>
 
           <H3>Previsão do dia</H3>
+
           {weatherToday[0] ? (
             <WeatherCard weather={weatherToday[0]} />
           ) : (
@@ -88,6 +155,7 @@ export default function WeatherPage() {
           )}
 
           <H3>Previsão semanal</H3>
+
           {weatherToday[0] ? (
             <WeekWeatherCard weatherList={weatherPerDay} />
           ) : (

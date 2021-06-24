@@ -55,7 +55,7 @@ export default function EnterPageForm() {
     console.log(keyError, key);
   };
 
-  const funcTest = (key) => {
+  const getValue = (key) => {
     setKey(key);
     console.log(key);
   };
@@ -65,7 +65,7 @@ export default function EnterPageForm() {
       <h2 className={classes.title}>Insira a sua API Key abaixo</h2>
       <form onSubmit={submitKey}>
         <TextField
-          onChange={(e) => funcTest(e.target.value)}
+          onChange={(e) => getValue(e.target.value)}
           required
           id="standard-required"
           label="API Key"

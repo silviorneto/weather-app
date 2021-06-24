@@ -32,7 +32,6 @@ export const Container = styled.div`
   height: 22vh;
   border-radius: 3px;
   margin: 1vh auto;
-  background-color: #3f51b5;
   background-image: url(${(props) => background[props.bg][0]});
   background-size: cover;
   -webkit-box-shadow: 6px 5px 14px -8px rgba(0, 0, 0, 0.77);
