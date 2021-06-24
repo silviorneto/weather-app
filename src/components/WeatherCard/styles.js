@@ -28,7 +28,6 @@ export const Container = styled.div`
   width: 80vw;
   padding: 15px;
   max-width: 800px;
-  height: 22vh;
   border-radius: 3px;
   margin: 1vh auto;
   background-image: url(${(props) => background[props.bg][0]});
@@ -38,10 +37,6 @@ export const Container = styled.div`
   color: ${(props) => background[props.bg][1]};
   text-shadow: 2px 2px 3px rgba(150, 150, 150, 1);
   font-size: 1.3rem;
-
-  @media (min-width: 376px) {
-    height: 27vh;
-  }
 `;
 export const Title = styled.h2`
   text-align: left;
