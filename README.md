@@ -19,4 +19,6 @@ React, Redux, Redux-Thunk, Material UI, Styled Components, Toastify, entre outra
 
 ## Preview
 
+[Weather App](http://weather-app-weld-kappa.vercel.app/)
+
 ![](/src/assets/preview.png)
