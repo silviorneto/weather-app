@@ -38,10 +38,12 @@ export const Container = styled.div`
   text-shadow: 2px 2px 3px rgba(150, 150, 150, 1);
   font-size: 1.3rem;
 `;
+
 export const Title = styled.h2`
   text-align: left;
   font-size: 1.2rem;
 `;
+
 export const Clima = styled.div`
   display: flex;
   align-items: center;
