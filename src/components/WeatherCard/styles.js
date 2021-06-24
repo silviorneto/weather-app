@@ -1,30 +1,4 @@
 import styled from "styled-components";
-import cloudyImg from "../../assets/cloudy-bg.jpg";
-import mistImg from "../../assets/mist-bg.jpg";
-import rainyImg from "../../assets/rainy-bg.jpg";
-import snowImg from "../../assets/snow-bg.jpg";
-import stormImg from "../../assets/storm-bg.jpg";
-import sunnyImg from "../../assets/sunny-bg.jpg";
-
-// const background = {
-//   Trovoada: [stormImg, "white"],
-//   Confusão: [stormImg, "white"],
-//   Tempestade: [stormImg, "white"],
-//   Tornado: [stormImg, "white"],
-//   Chuvisco: [rainyImg, "black"],
-//   Chuva: [rainyImg, "black"],
-//   Névoa: [mistImg, "black"],
-//   Fumaça: [mistImg, "black"],
-//   Pó: [mistImg, "black"],
-//   Areia: [mistImg, "black"],
-//   Cinzas: [mistImg, "black"],
-//   Limpo: [sunnyImg, "black"],
-//   Nublado: [cloudyImg, "black"],
-//   Neve: [snowImg, "black"],
-// };
-//   background-image: url(${(props) => background[props.bg][0]});
-//   background-size: cover;
-//   color: ${(props) => background[props.bg][1]};
 
 export const Container = styled.div`
   box-sizing: border-box;
