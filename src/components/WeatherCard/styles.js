@@ -30,11 +30,13 @@ export const Container = styled.div`
   max-width: 800px;
   border-radius: 3px;
   margin: 1vh auto;
-  background-image: url(${(props) => background[props.bg][0]});
-  background-size: cover;
+  background-color: #3f51b5;
+  /* background-image: url(${(props) => background[props.bg][0]});
+  background-size: cover; */
   -webkit-box-shadow: 6px 5px 14px -8px rgba(0, 0, 0, 0.77);
   box-shadow: 6px 5px 14px -8px rgba(0, 0, 0, 0.77);
-  color: ${(props) => background[props.bg][1]};
+  /* color: ${(props) => background[props.bg][1]}; */
+  color: white;
   text-shadow: 2px 2px 3px rgba(150, 150, 150, 1);
   font-size: 1.3rem;
 `;
