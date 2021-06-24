@@ -6,22 +6,25 @@ import snowImg from "../../assets/snow-bg.jpg";
 import stormImg from "../../assets/storm-bg.jpg";
 import sunnyImg from "../../assets/sunny-bg.jpg";
 
-const background = {
-  Trovoada: [stormImg, "white"],
-  Confusão: [stormImg, "white"],
-  Tempestade: [stormImg, "white"],
-  Tornado: [stormImg, "white"],
-  Chuvisco: [rainyImg, "black"],
-  Chuva: [rainyImg, "black"],
-  Névoa: [mistImg, "black"],
-  Fumaça: [mistImg, "black"],
-  Pó: [mistImg, "black"],
-  Areia: [mistImg, "black"],
-  Cinzas: [mistImg, "black"],
-  Limpo: [sunnyImg, "black"],
-  Nublado: [cloudyImg, "black"],
-  Neve: [snowImg, "black"],
-};
+// const background = {
+//   Trovoada: [stormImg, "white"],
+//   Confusão: [stormImg, "white"],
+//   Tempestade: [stormImg, "white"],
+//   Tornado: [stormImg, "white"],
+//   Chuvisco: [rainyImg, "black"],
+//   Chuva: [rainyImg, "black"],
+//   Névoa: [mistImg, "black"],
+//   Fumaça: [mistImg, "black"],
+//   Pó: [mistImg, "black"],
+//   Areia: [mistImg, "black"],
+//   Cinzas: [mistImg, "black"],
+//   Limpo: [sunnyImg, "black"],
+//   Nublado: [cloudyImg, "black"],
+//   Neve: [snowImg, "black"],
+// };
+//   background-image: url(${(props) => background[props.bg][0]});
+//   background-size: cover;
+//   color: ${(props) => background[props.bg][1]};
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -31,11 +34,8 @@ export const Container = styled.div`
   border-radius: 3px;
   margin: 1vh auto;
   background-color: #3f51b5;
-  /* background-image: url(${(props) => background[props.bg][0]});
-  background-size: cover; */
   -webkit-box-shadow: 6px 5px 14px -8px rgba(0, 0, 0, 0.77);
   box-shadow: 6px 5px 14px -8px rgba(0, 0, 0, 0.77);
-  /* color: ${(props) => background[props.bg][1]}; */
   color: white;
   text-shadow: 2px 2px 3px rgba(150, 150, 150, 1);
   font-size: 1.3rem;
